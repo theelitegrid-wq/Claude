@@ -84,3 +84,5 @@ credentials.json
 service-account*.json
 *-credentials.json
 .npmrc.local
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
