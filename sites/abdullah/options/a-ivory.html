@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Option A: Ivory Atelier</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap">
+<style>
+:root{--bg:#f1eee8;--paper:#f8f6f2;--ink:#1d2925;--muted:#66706b;--emerald:#1f4d3f;--brass:#a8875a;--line:#d9d3c9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.6 Manrope,sans-serif}
+.w{max-width:1280px;margin:0 auto;padding:0 48px}
+nav{display:flex;align-items:center;gap:40px;padding:28px 0;border-bottom:1px solid var(--line)}
+.logo{font:400 30px "Instrument Serif",serif;letter-spacing:-.01em}.logo i{color:var(--brass)}
+nav .l{display:flex;gap:34px;margin-left:auto;font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;font:500 14px Manrope;border-radius:2px;text-decoration:none}
+.b1{background:var(--emerald);color:#f1eee8}.b2{border:1px solid var(--ink);color:var(--ink)}
+.hero{padding:72px 0 0;text-align:center}
+.kick{font:500 12px Manrope;letter-spacing:.3em;color:var(--brass)}
+h1{font:400 128px/.92 "Instrument Serif",serif;letter-spacing:-.03em;margin:22px 0 0}h1 i{color:var(--emerald)}
+.sub{max-width:620px;margin:28px auto 0;color:var(--muted);font-size:19px}
+.row{display:flex;gap:12px;justify-content:center;margin-top:34px}
+.film{position:relative;margin-top:64px;height:520px;border-radius:3px;overflow:hidden}
+.film canvas{width:100%;height:100%;display:block}
+.film .tag{position:absolute;left:28px;bottom:24px;font:500 12px Manrope;letter-spacing:.2em;color:#f1eee8;background:rgba(29,41,37,.55);padding:9px 14px;backdrop-filter:blur(6px)}
+.film .play{position:absolute;right:28px;bottom:24px;width:54px;height:54px;border-radius:50%;border:1px solid rgba(241,238,232,.7);display:grid;place-items:center;color:#f1eee8}
+.three{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:96px}
+.three div{padding:40px 36px 48px 0;border-right:1px solid var(--line);margin-right:36px}.three div:last-child{border:0}
+.three small{font:500 12px Manrope;letter-spacing:.24em;color:var(--brass)}
+.three h3{font:400 44px/1 "Instrument Serif",serif;margin:14px 0 12px}.three p{color:var(--muted);margin:0}
+</style></head><body>
+<div class="w">
+<nav><span class="logo">Abdullah <i>Studio</i></span><div class="l"><span>Services</span><span>Industries</span><span>Work</span><span>Pricing</span></div><a class="btn b1">Book a consultation</a></nav>
+<section class="hero"><div class="kick">AI AGENTS &nbsp; AUTOMATION &nbsp; WEBSITES</div>
+<h1>Your business,<br>answering <i>itself.</i></h1>
+<p class="sub">AI agents that reply, qualify and book for you around the clock, inside a website that looks as good as your work.</p>
+<div class="row"><a class="btn b1">Book a consultation</a><a class="btn b2">View the work</a></div>
+<div class="film"><canvas id="c"></canvas><span class="tag">STUDIO REEL, 0:24</span><span class="play">&#9654;</span></div></section>
+<div class="three"><div><small>I</small><h3>AI agents</h3><p>Chat, WhatsApp and voice agents trained on your business.</p></div><div><small>II</small><h3>Automation</h3><p>Follow-ups, reminders and reviews that run themselves.</p></div><div><small>III</small><h3>Websites</h3><p>Bespoke sites with film, motion and booking built in.</p></div></div>
+</div>
+<script src="../video/scene.js"></script><script>SCENE(document.getElementById('c'),'marble',{still:14})</script>
+</body></html>

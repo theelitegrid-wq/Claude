@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Option B: Midnight Navy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Figtree:wght@300;400;500&display=swap">
+<style>
+:root{--bg:#0e1a2b;--bg2:#13233a;--fg:#f1eadf;--muted:#9fadbf;--champ:#e2c99a;--line:rgba(226,201,154,.22)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:300 17px/1.6 Figtree,sans-serif}
+.w{max-width:1280px;margin:0 auto;padding:0 48px}
+nav{display:flex;align-items:center;gap:40px;padding:30px 0}
+.logo{font:400 28px "Bodoni Moda",serif}.logo small{font:500 10px Figtree;letter-spacing:.32em;color:var(--champ);margin-left:10px}
+nav .l{display:flex;gap:34px;margin-left:auto;font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font:500 14px Figtree;border-radius:999px;text-decoration:none}
+.b1{background:var(--champ);color:#0e1a2b}.b2{border:1px solid var(--line);color:var(--fg)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;padding:40px 0 80px}
+.kick{font:500 12px Figtree;letter-spacing:.3em;color:var(--champ)}
+h1{font:400 92px/.98 "Bodoni Moda",serif;letter-spacing:-.02em;margin:22px 0 0}h1 i{color:var(--champ)}
+.sub{max-width:520px;margin:28px 0 0;color:var(--muted);font-size:19px}
+.row{display:flex;gap:12px;margin-top:34px}
+.arch{position:relative;height:620px;border-radius:320px 320px 6px 6px;overflow:hidden;border:1px solid var(--line)}
+.arch canvas{width:100%;height:100%;display:block}
+.arch .cap{position:absolute;left:0;right:0;bottom:28px;text-align:center;font:400 italic 22px "Bodoni Moda",serif;color:var(--fg)}
+.band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr)}.stats div{padding:44px 0;border-right:1px solid var(--line);text-align:center}.stats div:last-child{border:0}
+.stats b{display:block;font:400 54px/1 "Bodoni Moda",serif;color:var(--champ)}.stats span{font-size:14px;color:var(--muted)}
+</style></head><body>
+<div class="w">
+<nav><span class="logo">Abdullah<small>AI STUDIO</small></span><div class="l"><span>Services</span><span>Industries</span><span>Work</span><span>Pricing</span></div><a class="btn b1">Book a call</a></nav>
+<section class="hero"><div><div class="kick">PRIVATE AI STUDIO</div>
+<h1>Every lead answered. <i>Every hour of the night.</i></h1>
+<p class="sub">Bespoke AI agents, automation and websites for businesses where one missed call is one lost client.</p>
+<div class="row"><a class="btn b1">Book a strategy call</a><a class="btn b2">See demo sites</a></div></div>
+<div class="arch"><canvas id="c"></canvas><span class="cap">Always on.</span></div></section>
+</div>
+<div class="band"><div class="w stats"><div><b>24/7</b><span>Replies on every channel</span></div><div><b>&lt;5s</b><span>Average reply time</span></div><div><b>8</b><span>Industry blueprints</span></div><div><b>3 wks</b><span>Typical launch</span></div></div></div>
+<script src="../video/scene.js"></script><script>SCENE(document.getElementById('c'),'silk',{still:9})</script>
+</body></html>
