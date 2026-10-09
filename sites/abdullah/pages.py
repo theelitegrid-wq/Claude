@@ -37,7 +37,7 @@ def footer():
     return f'''<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div><a class="brand" href="/">Abdullah <small>AUTOMATIONS</small></a><p>AI agents, AI automation and premium websites for businesses that don't want to miss a customer.</p><a class="btn btn-gold" href="/#contact">Book a free strategy call</a></div>
+      <div><a class="brand" href="/">Abdullah <small>AUTOMATIONS</small></a><p>AI agents, AI automation and premium websites for businesses that don't want to miss a customer.</p><a class="btn btn-gold" href="/#contact">Book a free strategy call</a><p class="mail">Email: <a href="mailto:info@abdullahautomations.com">info@abdullahautomations.com</a></p></div>
       <div><h2>Services</h2><ul>{col(services)}</ul></div>
       <div><h2>Industries</h2><ul>{col(industries)}</ul></div>
       <div><h2>Guides</h2><ul>{col(guides)}</ul></div>

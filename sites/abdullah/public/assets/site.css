@@ -117,6 +117,8 @@ p { margin: 0; }
 .foot { background: var(--navy); color: #a9b8e0; font-size: 15px; padding-block: 64px 36px; }
 .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 1.2fr; gap: 36px; }
 .foot-grid p { margin: 14px 0 20px; max-width: 26em; }
+.foot .mail { margin: 18px 0 0; }
+.foot .mail a { color: var(--gold-hi); }
 .foot h2 { color: #fff; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px; }
 .foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .foot ul a { color: #c9d6f5; text-decoration: none; }
