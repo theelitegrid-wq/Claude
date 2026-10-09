@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Option F: Pearl Iridescent</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#14131f;--muted:#4e4b63;--violet:#5b3df5;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#fbfaff;color:var(--ink);font:400 17px/1.6 Manrope,sans-serif}
+.hero{position:relative;height:100vh;min-height:760px;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(251,250,255,.9))}
+.in{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:0 56px;height:100%;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;gap:40px;margin-top:24px;padding:14px 14px 14px 26px;border-radius:999px;background:rgba(255,255,255,.55);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.8)}
+.logo{font:700 19px Manrope;letter-spacing:-.02em}.logo span{font:400 italic 22px "Instrument Serif",serif;color:var(--violet)}
+nav .l{display:flex;gap:30px;margin-left:auto;font-size:14.5px;font-weight:500;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;font:600 15px Manrope;border-radius:999px;text-decoration:none}
+.b1{background:var(--ink);color:#fff}.b2{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid rgba(20,19,31,.12);backdrop-filter:blur(8px)}
+.copy{margin:auto 0;max-width:900px}
+.pill{display:inline-flex;gap:8px;align-items:center;font:600 13px Manrope;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9)}
+.pill i{width:8px;height:8px;border-radius:50%;background:#22c55e}
+h1{font:400 128px/.92 "Instrument Serif",serif;letter-spacing:-.035em;margin:24px 0 0}h1 i{color:var(--violet)}
+.sub{max-width:560px;margin:26px 0 0;color:var(--muted);font-size:19px;font-weight:500}
+.row{display:flex;gap:12px;margin-top:34px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1320px;margin:-60px auto 0;padding:0 56px;position:relative;z-index:2}
+.cards div{background:rgba(255,255,255,.75);backdrop-filter:blur(16px);border:1px solid #fff;border-radius:22px;padding:28px;box-shadow:0 30px 60px -30px rgba(60,40,140,.25)}
+.cards h3{font:400 34px/1 "Instrument Serif",serif;margin:0 0 8px}.cards p{margin:0;color:var(--muted);font-size:15.5px}
+</style></head><body>
+<section class="hero"><canvas id="c"></canvas><div class="in">
+<nav><span class="logo">Abdullah <span>studio</span></span><div class="l"><span>Services</span><span>Industries</span><span>Work</span><span>Pricing</span></div><a class="btn b1">Book a call</a></nav>
+<div class="copy"><span class="pill"><i></i>Taking new projects this month</span>
+<h1>AI that answers, books and <i>sells for you.</i></h1>
+<p class="sub">Custom AI agents, automations and websites for businesses that want every customer looked after, day and night.</p>
+<div class="row"><a class="btn b1">Book a strategy call</a><a class="btn b2">See demo sites</a></div></div></div></section>
+<div class="cards"><div><h3>AI agents</h3><p>Chat, WhatsApp and voice agents trained on your business.</p></div><div><h3>Automation</h3><p>Follow-ups, reminders and reviews that run themselves.</p></div><div><h3>Websites</h3><p>Bespoke sites with film and motion built in.</p></div></div>
+<div style="height:80px"></div>
+<script src="../../video/scene.js"></script><script>SCENE(document.getElementById('c'),'pearl',window.STILL!=null?{still:window.STILL}:{})</script>
+</body></html>

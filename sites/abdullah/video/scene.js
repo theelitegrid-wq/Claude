@@ -22,6 +22,33 @@
       'vec3 col=mix(navy,blue,dif*dif)+gold*spc*.85+blue*rim*.4;',
       'col*=1.-.4*smoothstep(.5,1.3,length(p*vec2(.8,1.)));return col;}'
     ].join('\n'),
+    /* Royal sapphire: lit satin folds in royal blue with gold glints */
+    sapphire: [
+      'float hf(vec2 p,float T){p+=.45*vec2(sin(p.y*1.3+T*.20),sin(p.x*1.1-T*.17));',
+      'return sin(p.x*2.2+p.y*.8+T*.30)*.55+sin(p.x*1.1-p.y*1.7-T*.22)*.35+sin(p.x*3.7+p.y*2.3+T*.18)*.12;}',
+      'vec3 scene(vec2 p,float T){vec2 q=p*2.;float e=.01;float c0=hf(q,T);',
+      'vec3 nrm=normalize(vec3(-(hf(q+vec2(e,0.),T)-c0)/e,-(hf(q+vec2(0.,e),T)-c0)/e,1.4));',
+      'vec3 L=normalize(vec3(-.4,.6,.7));vec3 H=normalize(L+vec3(0,0,1));',
+      'float dif=max(dot(nrm,L),0.);float spc=pow(max(dot(nrm,H),0.),30.);',
+      'vec3 deep=vec3(.02,.06,.24),royal=vec3(.10,.30,.85),cyan=vec3(.35,.70,1.),gold=vec3(1.,.84,.55);',
+      'vec3 col=mix(deep,royal,dif*dif);col+=cyan*pow(dif,6.)*.35+gold*spc*.9;',
+      'col*=1.-.35*smoothstep(.6,1.4,length(p));return col;}'
+    ].join('\n'),
+    /* Plum ink: warped liquid in plum, magenta and rose gold */
+    plum: [
+      'vec3 scene(vec2 p,float T){p*=1.3;vec2 q=vec2(fbm(p+.05*T),fbm(p+vec2(5.2,1.3)-.04*T));',
+      'vec2 r=vec2(fbm(p+3.*q+vec2(1.7,9.2)+.06*T),fbm(p+3.*q+vec2(8.3,2.8)-.05*T));float f=fbm(p+3.*r);',
+      'vec3 a=vec3(.10,.03,.16),b=vec3(.42,.10,.40),c=vec3(.95,.55,.62),d=vec3(1.,.83,.70);',
+      'vec3 col=mix(a,b,smoothstep(.2,.6,f));col=mix(col,c,smoothstep(.55,.8,f));col=mix(col,d,smoothstep(.78,.95,f)*.8);',
+      'col+=vec3(.9,.6,.5)*pow(length(q),3.)*.15;col*=1.-.3*smoothstep(.6,1.4,length(p*.77));return col;}'
+    ].join('\n'),
+    /* Pearl: iridescent liquid chrome in soft pastels */
+    pearl: [
+      'vec3 scene(vec2 p,float T){p*=1.1;vec2 q=vec2(fbm(p+.04*T),fbm(p+vec2(5.2,1.3)-.035*T));',
+      'float f=fbm(p+2.6*q+vec2(.05*T,-.04*T));float g=f*2.2+length(q)*1.3;',
+      'vec3 col=.5+.5*cos(6.2831*(g+vec3(0.,.33,.67)));col=mix(vec3(.97,.95,.99),col,.32);',
+      'float sh=pow(smoothstep(.45,.75,f),3.);col+=sh*.18;col=mix(col,vec3(1.),.08);return col;}'
+    ].join('\n'),
     /* Light through blinds: soft sunlight bars drifting across warm stone */
     stone: [
       'vec3 scene(vec2 p,float T){vec3 stone=vec3(.83,.80,.76),shade=vec3(.60,.56,.51),warm=vec3(.97,.86,.72);',
