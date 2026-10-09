@@ -359,6 +359,10 @@ section { padding-block: 120px; }
 .svc li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: 16px; color: var(--ink); }
 .svc li::before { content: ""; width: 8px; height: 8px; margin-top: 9px; border-radius: 50%; background: var(--royal); }
 .svc.big li::before { background: var(--gold); }
+.svc .more { font-weight: 700; color: var(--royal); text-decoration: none; }
+.svc.big .more { color: var(--gold-hi); }
+.svc .more:hover .arr { transform: translateX(4px); }
+.svc .more .arr { display: inline-block; transition: transform .4s var(--ease); }
 .svc .price { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
 .svc.big .price { border-color: var(--line-dark); color: #c3d0f0; }
 .svc .price b { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
@@ -398,6 +402,7 @@ section { padding-block: 120px; }
 .ind-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; padding-top: 26px; border-top: 1px solid var(--line); }
 .ind-foot p { font-size: 16px; color: var(--muted); max-width: 36em; }
 .ind-foot p b { color: var(--royal); font-weight: 700; }
+.ind-foot p a { color: var(--royal); font-weight: 600; }
 @media (max-width: 900px) {
   .ind { grid-template-columns: 1fr; }
   .ind-list { flex-direction: row; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
@@ -540,9 +545,15 @@ form.card { background: #fff; color: var(--ink); border-radius: 28px; padding: 3
 .form-done pre { margin: 0; white-space: pre-wrap; font: 13px/1.5 var(--mono); color: var(--muted); max-height: 160px; overflow: auto; }
 @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } form.card { grid-template-columns: 1fr; padding: 24px; } }
 
-footer { background: var(--navy); color: #a9b8e0; font-size: 14.5px; padding-block: 40px; }
+footer { background: var(--navy); color: #a9b8e0; font-size: 14.5px; padding-block: 56px 40px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
 footer .brand { color: #fff; font-size: 20px; }
+.site-links { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 32px; padding-bottom: 36px; margin-bottom: 28px; border-bottom: 1px solid var(--line-dark); }
+.site-links h2 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
+.site-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.site-links a { color: #c9d6f5; text-decoration: none; }
+.site-links a:hover { color: var(--gold-hi); }
+@media (max-width: 760px) { .site-links { grid-template-columns: 1fr; } }
 
 /* Scroll-driven motion: elements already in view render final; browsers without support show static content */
 @supports (animation-timeline: view()) {
@@ -653,6 +664,7 @@ footer .brand { color: #fff; font-size: 20px; }
             <li>Trained on your FAQs, price list and policies</li>
             <li>Speaks English, Arabic, Urdu and more</li>
           </ul>
+          <a class="more" href="/ai-agents/">More about AI agents for business <span class="arr">&rarr;</span></a>
           <p class="price">Setup from <b>$2,500</b> plus a monthly care plan</p>
         </article>
         <article class="svc reveal">
@@ -665,6 +677,7 @@ footer .brand { color: #fff; font-size: 20px; }
             <li>Reminders that cut no-shows</li>
             <li>Review requests after every job</li>
           </ul>
+          <a class="more" href="/ai-automation-services/">More about AI automation services <span class="arr">&rarr;</span></a>
           <p class="price">Projects from <b>$1,200</b></p>
         </article>
         <article class="svc reveal">
@@ -676,6 +689,7 @@ footer .brand { color: #fff; font-size: 20px; }
             <li>Background video and scroll animation</li>
             <li>Booking, payments and SEO</li>
           </ul>
+          <a class="more" href="/website-design-services/">More about website design services <span class="arr">&rarr;</span></a>
           <p class="price">Sites from <b>$1,500</b></p>
         </article>
       </div>
@@ -851,6 +865,11 @@ footer .brand { color: #fff; font-size: 20px; }
 </main>
 
 <footer class="bleed">
+  <div class="wrap site-links">
+    <div><h2>Services</h2><ul><li><a href="/ai-automation-services/">AI automation services</a></li><li><a href="/ai-agents/">AI agents for business</a></li><li><a href="/website-design-services/">Website design services</a></li></ul></div>
+    <div><h2>Industries</h2><ul><li><a href="/ai-automation-for/dental-clinics/">AI automation for dental clinics</a></li><li><a href="/ai-automation-for/real-estate/">AI automation for real estate</a></li><li><a href="/ai-automation-for/restaurants/">AI automation for restaurants</a></li><li><a href="/ai-automation-for/ecommerce/">AI automation for e-commerce</a></li><li><a href="/ai-automation-for/law-firms/">AI automation for law firms</a></li><li><a href="/ai-automation-for/fitness-studios/">AI automation for gyms and fitness studios</a></li><li><a href="/ai-automation-for/home-services/">AI automation for home services</a></li><li><a href="/ai-automation-for/salons-spas/">AI automation for salons and spas</a></li></ul></div>
+    <div><h2>Guides</h2><ul><li><a href="/guides/what-is-ai-automation/">What is AI automation?</a></li><li><a href="/guides/ai-agent-vs-chatbot/">AI agent vs. chatbot</a></li><li><a href="/guides/how-much-does-ai-automation-cost/">How much does AI automation cost?</a></li></ul></div>
+  </div>
   <div class="wrap">
     <span class="brand">Abdullah</span>
     <span>&copy; 2026 Abdullah Automations. AI agents, AI automation and websites. Demo sites on this page are concepts made to show the work.</span>
@@ -979,14 +998,14 @@ footer .brand { color: #fff; font-size: 20px; }
 
   /* Industries */
   var inds = [
-    { n: 'Dental and clinics', demo: 'demos/dental.html', pains: ['Calls missed while the front desk is with patients', 'No-shows leave empty chairs', 'Same insurance questions all day'], does: ['Books, moves and cancels appointments 24/7', 'Sends reminders and fills cancelled slots', 'Answers insurance and pricing questions', 'Collects new patient forms before the visit'], note: 'Clinics usually see the biggest win from <b>after-hours booking and no-show reminders</b>.' },
-    { n: 'Real estate', demo: 'demos/realestate.html', pains: ['Portal leads go cold within an hour', 'Agents spend hours on unqualified leads', 'Viewings booked by phone tag'], does: ['Replies to every portal lead in seconds', 'Qualifies budget, timeline and financing', 'Books viewings into each agent’s calendar', 'Sends hot buyers straight to your phone'], note: 'Speed wins listings. The first agent to reply <b>usually wins the client</b>.' },
-    { n: 'Restaurants', demo: 'demos/restaurant.html', pains: ['Phones ring during the dinner rush', 'DMs about bookings go unanswered', 'Private event enquiries slip through'], does: ['Takes reservations by chat, DM and phone', 'Answers menu, allergy and parking questions', 'Captures private event details and budget', 'Asks happy guests for a Google review'], note: 'A reservation agent <b>never puts a guest on hold</b> on a Friday night.' },
-    { n: 'E-commerce', demo: 'demos/store.html', pains: ['"Where is my order?" fills the inbox', 'Shoppers leave with questions unanswered', 'Abandoned carts never get a follow-up'], does: ['Tracks orders and handles returns', 'Recommends products like a good shop assistant', 'Recovers abandoned carts by email and SMS', 'Hands tricky cases to your support team'], note: 'Most stores can hand <b>the majority of support tickets</b> to an agent.' },
-    { n: 'Law firms', pains: ['Intake calls take up lawyer time', 'Leads call the next firm if no one answers', 'Paperwork chasing by email'], does: ['Screens new enquiries by case type', 'Books consultations with the right lawyer', 'Collects documents before the first meeting', 'Sends updates so clients stop calling'], note: 'Intake automation gives lawyers <b>hours back every week</b>.' },
-    { n: 'Fitness studios', pains: ['Trial sign-ups never come in', 'Members cancel without a conversation', 'Class questions answered by hand'], does: ['Books free trials and class spots', 'Follows up with trial members to join', 'Flags members at risk of cancelling', 'Answers schedule and pricing questions'], note: 'The money is in <b>trial follow-up</b>, which most studios do by hand or not at all.' },
-    { n: 'Home services', pains: ['Missed calls while on a job', 'Quotes sent and never followed up', 'Reviews only from unhappy customers'], does: ['Texts back every missed call in seconds', 'Books jobs and sends the time window', 'Follows up on every open quote', 'Asks for a review when the job is done'], note: 'Missed-call text-back alone <b>pays for itself</b> for most trades.' },
-    { n: 'Salons and spas', pains: ['Booking requests arrive in DMs', 'Last-minute gaps in the schedule', 'Clients forget to rebook'], does: ['Books from Instagram and WhatsApp', 'Fills cancellations from a waitlist', 'Reminds clients when it’s time to rebook', 'Sells gift cards and packages'], note: 'Rebooking reminders bring <b>regulars back on schedule</b>.' }
+    { n: 'Dental and clinics', page: '/ai-automation-for/dental-clinics/', demo: 'demos/dental.html', pains: ['Calls missed while the front desk is with patients', 'No-shows leave empty chairs', 'Same insurance questions all day'], does: ['Books, moves and cancels appointments 24/7', 'Sends reminders and fills cancelled slots', 'Answers insurance and pricing questions', 'Collects new patient forms before the visit'], note: 'Clinics usually see the biggest win from <b>after-hours booking and no-show reminders</b>.' },
+    { n: 'Real estate', page: '/ai-automation-for/real-estate/', demo: 'demos/realestate.html', pains: ['Portal leads go cold within an hour', 'Agents spend hours on unqualified leads', 'Viewings booked by phone tag'], does: ['Replies to every portal lead in seconds', 'Qualifies budget, timeline and financing', 'Books viewings into each agent’s calendar', 'Sends hot buyers straight to your phone'], note: 'Speed wins listings. The first agent to reply <b>usually wins the client</b>.' },
+    { n: 'Restaurants', page: '/ai-automation-for/restaurants/', demo: 'demos/restaurant.html', pains: ['Phones ring during the dinner rush', 'DMs about bookings go unanswered', 'Private event enquiries slip through'], does: ['Takes reservations by chat, DM and phone', 'Answers menu, allergy and parking questions', 'Captures private event details and budget', 'Asks happy guests for a Google review'], note: 'A reservation agent <b>never puts a guest on hold</b> on a Friday night.' },
+    { n: 'E-commerce', page: '/ai-automation-for/ecommerce/', demo: 'demos/store.html', pains: ['"Where is my order?" fills the inbox', 'Shoppers leave with questions unanswered', 'Abandoned carts never get a follow-up'], does: ['Tracks orders and handles returns', 'Recommends products like a good shop assistant', 'Recovers abandoned carts by email and SMS', 'Hands tricky cases to your support team'], note: 'Most stores can hand <b>the majority of support tickets</b> to an agent.' },
+    { n: 'Law firms', page: '/ai-automation-for/law-firms/', pains: ['Intake calls take up lawyer time', 'Leads call the next firm if no one answers', 'Paperwork chasing by email'], does: ['Screens new enquiries by case type', 'Books consultations with the right lawyer', 'Collects documents before the first meeting', 'Sends updates so clients stop calling'], note: 'Intake automation gives lawyers <b>hours back every week</b>.' },
+    { n: 'Fitness studios', page: '/ai-automation-for/fitness-studios/', pains: ['Trial sign-ups never come in', 'Members cancel without a conversation', 'Class questions answered by hand'], does: ['Books free trials and class spots', 'Follows up with trial members to join', 'Flags members at risk of cancelling', 'Answers schedule and pricing questions'], note: 'The money is in <b>trial follow-up</b>, which most studios do by hand or not at all.' },
+    { n: 'Home services', page: '/ai-automation-for/home-services/', pains: ['Missed calls while on a job', 'Quotes sent and never followed up', 'Reviews only from unhappy customers'], does: ['Texts back every missed call in seconds', 'Books jobs and sends the time window', 'Follows up on every open quote', 'Asks for a review when the job is done'], note: 'Missed-call text-back alone <b>pays for itself</b> for most trades.' },
+    { n: 'Salons and spas', page: '/ai-automation-for/salons-spas/', pains: ['Booking requests arrive in DMs', 'Last-minute gaps in the schedule', 'Clients forget to rebook'], does: ['Books from Instagram and WhatsApp', 'Fills cancellations from a waitlist', 'Reminds clients when it’s time to rebook', 'Sells gift cards and packages'], note: 'Rebooking reminders bring <b>regulars back on schedule</b>.' }
   ];
   var list = $('indList'), panel = $('indPanel');
   function showInd(i) {
@@ -997,7 +1016,7 @@ footer .brand { color: #fff; font-size: 20px; }
       '<h3>' + d.n + '</h3>' +
       '<div><h4>WHERE MONEY LEAKS</h4><ul class="pains">' + li(d.pains) + '</ul></div>' +
       '<div><h4>WHAT YOUR AI AGENT DOES</h4><ul>' + li(d.does) + '</ul></div>' +
-      '<div class="ind-foot"><p>' + d.note + '</p>' +
+      '<div class="ind-foot"><p>' + d.note + ' <a href="' + d.page + '">Read the full guide for ' + d.n.toLowerCase() + '</a>.</p>' +
       (d.demo ? '<a class="btn btn-royal" href="' + d.demo + '">Open the demo site <span class="arr">&rarr;</span></a>' : '<a class="btn btn-line" href="#contact">Ask about this setup <span class="arr">&rarr;</span></a>') + '</div>';
   }
   inds.forEach(function (d, i) {

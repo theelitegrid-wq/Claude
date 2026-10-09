@@ -1,0 +1,23 @@
+# Abdullah Automations
+
+> AI automation agency run by Abdullah. Builds AI agents (website chat, WhatsApp, Instagram and voice) that answer leads 24/7 and book appointments, AI automations for follow-ups, reminders, CRM updates and reviews, and premium custom websites. Fixed-price projects; websites from $1,500, automation from $1,200, AI agents from $2,500.
+
+## Services
+- [AI automation services](https://abdullahautomations.com/ai-automation-services/): lead capture, follow-ups, reminders, review requests, CRM and reporting automations
+- [AI agents for business](https://abdullahautomations.com/ai-agents/): chat, WhatsApp, Instagram and voice agents that qualify leads and book appointments
+- [Website design services](https://abdullahautomations.com/website-design-services/): custom premium websites with video, booking and SEO
+
+## Industries
+- [Dental clinics](https://abdullahautomations.com/ai-automation-for/dental-clinics/)
+- [Real estate agents](https://abdullahautomations.com/ai-automation-for/real-estate/)
+- [Restaurants](https://abdullahautomations.com/ai-automation-for/restaurants/)
+- [E-commerce stores](https://abdullahautomations.com/ai-automation-for/ecommerce/)
+- [Law firms](https://abdullahautomations.com/ai-automation-for/law-firms/)
+- [Gyms and fitness studios](https://abdullahautomations.com/ai-automation-for/fitness-studios/)
+- [Home service businesses](https://abdullahautomations.com/ai-automation-for/home-services/)
+- [Salons and spas](https://abdullahautomations.com/ai-automation-for/salons-spas/)
+
+## Guides
+- [What is AI automation?](https://abdullahautomations.com/guides/what-is-ai-automation/)
+- [AI agent vs. chatbot](https://abdullahautomations.com/guides/ai-agent-vs-chatbot/)
+- [How much does AI automation cost?](https://abdullahautomations.com/guides/how-much-does-ai-automation-cost/)
