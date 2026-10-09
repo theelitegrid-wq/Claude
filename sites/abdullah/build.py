@@ -29,7 +29,7 @@ if OUT.exists():
     shutil.rmtree(OUT)
 OUT.mkdir()
 (OUT / "index.html").write_text(page, encoding="utf-8")
-for name in ["favicon.svg", "apple-touch-icon.png", "og-image.jpg", "robots.txt", "llms.txt"]:
+for name in ["favicon.svg", "apple-touch-icon.png", "og-image.jpg", "robots.txt", "llms.txt", *[f.name for f in ROOT.glob("*.txt") if len(f.stem) == 32]]:
     shutil.copy2(ROOT / name, OUT / name)
 shutil.copytree(ROOT / "demos", OUT / "demos")
 (OUT / "video").mkdir()
