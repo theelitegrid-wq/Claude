@@ -19,12 +19,13 @@ def page_title(t):
 
 
 def nav():
-    svc = "".join(f'<a href="/{s["slug"]}/">{s["nav"]}</a>' for s in SERVICES)
+    items = [("/services/", "Services"), ("/industries/", "Industries"), ("/work/", "Work"), ("/pricing/", "Pricing"), ("/guides/", "Guides"), ("/about/", "About")]
+    links = "".join(f'<a href="{u}">{t}</a>' for u, t in items)
     return f'''<header class="nav">
   <div class="wrap">
     <a class="brand" href="/">Abdullah <small>AUTOMATIONS</small></a>
-    <nav class="links" aria-label="Main">{svc}<a href="/#industries">Industries</a><a href="/guides/what-is-ai-automation/">Guides</a><a href="/#pricing">Pricing</a></nav>
-    <a class="btn btn-gold" href="/#contact">Book a call</a>
+    <nav class="links" aria-label="Main">{links}</nav>
+    <a class="btn btn-gold" href="/contact/">Contact</a>
   </div>
 </header>'''
 
@@ -34,13 +35,15 @@ def footer():
     services = [(f'/{s["slug"]}/', s["keyword"].capitalize()) for s in SERVICES]
     industries = [(f'/ai-automation-for/{i["slug"]}/', f'AI automation for {i["name"]}') for i in INDUSTRIES]
     guides = [(f'/guides/{g["slug"]}/', g["h1"].split("?")[0].split(":")[0] + ("?" if "?" in g["h1"] else "")) for g in GUIDES]
+    company = [("/about/", "About"), ("/work/", "Work"), ("/pricing/", "Pricing"), ("/contact/", "Contact"), ("/privacy-policy/", "Privacy policy"), ("/terms/", "Terms of service")]
     return f'''<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div><a class="brand" href="/">Abdullah <small>AUTOMATIONS</small></a><p>AI agents, AI automation and premium websites for businesses that don't want to miss a customer.</p><a class="btn btn-gold" href="/#contact">Book a free strategy call</a><p class="mail">Email: <a href="mailto:info@abdullahautomations.com">info@abdullahautomations.com</a></p></div>
+      <div><a class="brand" href="/">Abdullah <small>AUTOMATIONS</small></a><p>AI agents, AI automation and premium websites for businesses that don't want to miss a customer.</p><a class="btn btn-gold" href="/contact/">Book a free strategy call</a><p class="mail">Email: <a href="mailto:info@abdullahautomations.com">info@abdullahautomations.com</a></p></div>
       <div><h2>Services</h2><ul>{col(services)}</ul></div>
       <div><h2>Industries</h2><ul>{col(industries)}</ul></div>
       <div><h2>Guides</h2><ul>{col(guides)}</ul></div>
+      <div><h2>Company</h2><ul>{col(company)}</ul></div>
     </div>
     <p class="copy">&copy; 2026 {BRAND}. All rights reserved.</p>
   </div>
@@ -53,7 +56,7 @@ def faq_html(faqs):
 
 
 def cta(text="See where an AI agent would win you more customers. Book a free 30-minute strategy call and leave with a plan, whether you hire me or not."):
-    return f'''<section class="sec cta-sec"><div class="wrap cta"><div><h2>Ready to stop missing customers?</h2><p>{text}</p></div><a class="btn btn-gold" href="/#contact">Book a free strategy call</a></div></section>'''
+    return f'''<section class="sec cta-sec"><div class="wrap cta"><div><h2>Ready to stop missing customers?</h2><p>{text}</p></div><a class="btn btn-gold" href="/contact/">Book a free strategy call</a></div></section>'''
 
 
 def crumbs(trail):
@@ -118,23 +121,23 @@ def document(*, url, title, desc, body, graph, og_type="website"):
 
 def hero(trail, kick, h1, lede, extra=""):
     return f'''<section class="hero"><div class="wrap">{crumbs(trail)}<span class="kick">{esc(kick)}</span><h1>{esc(h1)}</h1><p class="lede">{esc(lede)}</p>
-<div class="row"><a class="btn btn-gold" href="/#contact">Book a free strategy call</a>{extra}</div></div></section>'''
+<div class="row"><a class="btn btn-gold" href="/contact/">Book a free strategy call</a>{extra}</div></div></section>'''
 
 
 def service_page(s):
     url = f"{SITE}/{s['slug']}/"
-    trail = [("Home", "/"), (s["nav"], None)]
+    trail = [("Home", "/"), ("Services", "/services/"), (s["nav"], None)]
     intro = "".join(f'<div class="prose"><h2>{esc(h)}</h2>{"".join(f"<p>{esc(p)}</p>" for p in ps)}</div>' for h, ps in s["sections"])
     feats = "".join(f'<article class="card"><h3>{esc(t)}</h3><p>{esc(d)}</p></article>' for t, d in s["features"])
     steps = "".join(f'<li><h3>{esc(t)}</h3><p>{esc(d)}</p></li>' for t, d in s["steps"])
     inds = "".join(f'<a class="chip" href="/ai-automation-for/{i["slug"]}/">{esc(i["short"])}</a>' for i in INDUSTRIES)
     others = "".join(f'<a class="chip" href="/{o["slug"]}/">{esc(o["keyword"].capitalize())}</a>' for o in SERVICES if o is not s)
     tools = "".join(f"<span>{esc(t)}</span>" for t in s["tools"])
-    body = (hero(trail, s["keyword"], s["h1"], s["lede"], '<a class="btn btn-glass" href="/#demos">See demo sites</a>') +
+    body = (hero(trail, s["keyword"], s["h1"], s["lede"], '<a class="btn btn-glass" href="/work/">See demo sites</a>') +
             f'<section class="sec"><div class="wrap">{intro}</div></section>'
             f'<section class="sec alt"><div class="wrap"><span class="kick">What\'s included</span><h2>What you get</h2><div class="cards">{feats}</div></div></section>'
             f'<section class="sec dark"><div class="wrap"><span class="kick">How it works</span><h2>From first call to launch</h2><ol class="steps">{steps}</ol></div></section>'
-            f'<section class="sec"><div class="wrap split"><div><span class="kick">Pricing</span><h2>Clear, fixed pricing</h2><p class="big">{esc(s["price_note"])}</p><p>Every project starts with a written blueprint and a fixed quote, so you know the full cost before work begins. See all packages on the <a href="/#pricing">pricing section</a>.</p></div>'
+            f'<section class="sec"><div class="wrap split"><div><span class="kick">Pricing</span><h2>Clear, fixed pricing</h2><p class="big">{esc(s["price_note"])}</p><p>Every project starts with a written blueprint and a fixed quote, so you know the full cost before work begins. See all packages on the <a href="/pricing/">pricing section</a>.</p></div>'
             f'<div><span class="kick">Works with</span><h2>Tools I connect</h2><div class="tools">{tools}</div></div></div></section>'
             f'<section class="sec alt"><div class="wrap"><span class="kick">Industries</span><h2>Built for your industry</h2><p>See how {esc(s["keyword"].lower())} works for your type of business:</p><div class="chips">{inds}</div><p class="also">Related services:</p><div class="chips">{others}</div></div></section>'
             + faq_html(s["faqs"]) + cta())
@@ -149,7 +152,7 @@ def service_page(s):
 
 def industry_page(i):
     url = f"{SITE}/ai-automation-for/{i['slug']}/"
-    trail = [("Home", "/"), ("Industries", "/#industries"), (i["short"], None)]
+    trail = [("Home", "/"), ("Industries", "/industries/"), (i["short"], None)]
     pains = "".join(f'<article class="card pain"><h3>{esc(t)}</h3><p>{esc(d)}</p></article>' for t, d in i["pains"])
     sols = "".join(f"<li>{esc(x)}</li>" for x in i["solutions"])
     convo = "".join(f'<div class="msg {w}"><span class="who">{"CUSTOMER" if w == "in" else "AI AGENT"}</span>{esc(t)}</div>' for w, t in i["convo"])
@@ -176,7 +179,7 @@ def industry_page(i):
 
 def guide_page(g):
     url = f"{SITE}/guides/{g['slug']}/"
-    trail = [("Home", "/"), ("Guides", "/guides/what-is-ai-automation/"), (g["h1"].split(":")[0].split("?")[0], None)]
+    trail = [("Home", "/"), ("Guides", "/guides/"), (g["h1"].split(":")[0].split("?")[0], None)]
     parts = []
     toc = []
     for n, sec in enumerate(g["body"]):

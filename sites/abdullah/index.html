@@ -543,12 +543,13 @@ form.card { background: #fff; color: var(--ink); border-radius: 28px; padding: 3
 footer { background: var(--navy); color: #a9b8e0; font-size: 14.5px; padding-block: 56px 40px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
 footer .brand { color: #fff; font-size: 20px; }
-.site-links { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 32px; padding-bottom: 36px; margin-bottom: 28px; border-bottom: 1px solid var(--line-dark); }
+.site-links { display: grid; grid-template-columns: 1fr 1.4fr 1.1fr .8fr; gap: 32px; padding-bottom: 36px; margin-bottom: 28px; border-bottom: 1px solid var(--line-dark); }
 .site-links h2 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
 .site-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
 .site-links a { color: #c9d6f5; text-decoration: none; }
 .site-links a:hover { color: var(--gold-hi); }
-@media (max-width: 760px) { .site-links { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .site-links { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .site-links { grid-template-columns: 1fr; } }
 
 /* Scroll-driven motion: elements already in view render final; browsers without support show static content */
 @supports (animation-timeline: view()) {
@@ -578,14 +579,15 @@ footer .brand { color: #fff; font-size: 20px; }
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Abdullah Automations, home">Abdullah <small>AUTOMATIONS</small></a>
-    <nav class="links" aria-label="Sections">
-      <a href="#services">Services</a>
-      <a href="#industries">Industries</a>
-      <a href="#demos">Demos</a>
-      <a href="#process">Process</a>
-      <a href="#pricing">Pricing</a>
+    <nav class="links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/industries/">Industries</a>
+      <a href="/work/">Work</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
     </nav>
-    <a class="btn btn-gold magnetic" href="#contact">Book a call</a>
+    <a class="btn btn-gold magnetic" href="/contact/">Contact</a>
   </div>
 </header>
 
@@ -849,9 +851,9 @@ footer .brand { color: #fff; font-size: 20px; }
         <div class="f full"><button class="btn btn-royal magnetic" type="submit">Prepare my enquiry <span class="arr">&rarr;</span></button></div>
         <div class="form-done" id="formDone" hidden>
           <b>Your enquiry is ready.</b>
-          <span class="muted">Copy it and send it to the email address on the left.</span>
+          <span class="muted">Send it from your email app, or copy it and email it to info@abdullahautomations.com.</span>
           <pre id="formText"></pre>
-          <div><button class="btn btn-line" type="button" id="copyForm">Copy enquiry</button></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-royal" id="mailForm" href="mailto:info@abdullahautomations.com">Open in email app</a><button class="btn btn-line" type="button" id="copyForm">Copy enquiry</button></div>
         </div>
       </form>
     </div>
@@ -863,10 +865,11 @@ footer .brand { color: #fff; font-size: 20px; }
     <div><h2>Services</h2><ul><li><a href="/ai-automation-services/">AI automation services</a></li><li><a href="/ai-agents/">AI agents for business</a></li><li><a href="/website-design-services/">Website design services</a></li></ul></div>
     <div><h2>Industries</h2><ul><li><a href="/ai-automation-for/dental-clinics/">AI automation for dental clinics</a></li><li><a href="/ai-automation-for/real-estate/">AI automation for real estate</a></li><li><a href="/ai-automation-for/restaurants/">AI automation for restaurants</a></li><li><a href="/ai-automation-for/ecommerce/">AI automation for e-commerce</a></li><li><a href="/ai-automation-for/law-firms/">AI automation for law firms</a></li><li><a href="/ai-automation-for/fitness-studios/">AI automation for gyms and fitness studios</a></li><li><a href="/ai-automation-for/home-services/">AI automation for home services</a></li><li><a href="/ai-automation-for/salons-spas/">AI automation for salons and spas</a></li></ul></div>
     <div><h2>Guides</h2><ul><li><a href="/guides/what-is-ai-automation/">What is AI automation?</a></li><li><a href="/guides/ai-agent-vs-chatbot/">AI agent vs. chatbot</a></li><li><a href="/guides/how-much-does-ai-automation-cost/">How much does AI automation cost?</a></li></ul></div>
+    <div><h2>Company</h2><ul><li><a href="/about/">About</a></li><li><a href="/work/">Work</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy policy</a></li><li><a href="/terms/">Terms of service</a></li></ul></div>
   </div>
   <div class="wrap">
     <span class="brand">Abdullah</span>
-    <span>&copy; 2026 Abdullah Automations. AI agents, AI automation and websites. Demo sites on this page are concepts made to show the work.</span>
+    <span>&copy; 2026 Abdullah Automations. All rights reserved. Demo sites are concepts made to show the work.</span>
   </div>
 </footer>
 
@@ -1095,6 +1098,7 @@ footer .brand { color: #fff; font-size: 20px; }
     if (bad.length) { bad[0].focus(); return; }
     var text = 'Name: ' + name.value.trim() + '\nBusiness: ' + ($('c-biz').value.trim() || '-') + '\nEmail: ' + email.value.trim() + '\nIndustry: ' + $('c-ind').value + '\n\n' + ($('c-need').value.trim() || 'I would like a free strategy call.');
     $('formText').textContent = text;
+    $('mailForm').href = 'mailto:info@abdullahautomations.com?subject=' + encodeURIComponent('Enquiry from ' + name.value.trim()) + '&body=' + encodeURIComponent(text);
     $('formDone').hidden = false;
   });
   $('copyForm').addEventListener('click', function () { copy($('formText').textContent, this, 'Copy enquiry'); });
