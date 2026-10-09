@@ -6,7 +6,7 @@
   var css = [
     '.ag{--a:var(--ag-accent,#1f6f5c);--af:var(--ag-accent-fg,#fff);--b:var(--ag-bg,#fff);--f:var(--ag-fg,#14201c);--m:var(--ag-muted,#5e6b66);--l:var(--ag-line,#e2e7e4);--s:var(--ag-soft,#f2f5f3);',
     'position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;font-family:var(--ag-font,system-ui,sans-serif);color:var(--f)}',
-    '.ag *{box-sizing:border-box}',
+    '.ag *{box-sizing:border-box}.ag [hidden]{display:none!important}',
     '.ag-launch{display:flex;align-items:center;gap:10px;margin-left:auto;border:0;cursor:pointer;background:var(--a);color:var(--af);font:600 15px/1 inherit;font-family:inherit;padding:14px 18px;border-radius:999px;box-shadow:0 10px 30px -8px rgba(0,0,0,.35)}',
     '.ag-launch:focus-visible,.ag-chip:focus-visible,.ag-send:focus-visible,.ag-x:focus-visible{outline:2px solid var(--a);outline-offset:3px}',
     '.ag-dot{width:9px;height:9px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:agp 2.2s infinite}',

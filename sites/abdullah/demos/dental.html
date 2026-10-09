@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Brightline Dental Studio</title>
+<title>Brightline Dental Atelier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 /* Single light theme on purpose: a clinic should feel bright and clean. Asymmetric hero with a soft orb. */
 :root {
-  --bg: #f6fbfb; --paper: #ffffff; --teal: #0c4a4e; --teal-2: #136a6f; --mint: #d7ecea;
-  --coral: #ef7b5f; --fg: #0f2a2c; --muted: #557073; --line: #dbe9e8;
+  --bg: #f5f0e8; --paper: #ffffff; --teal: #0e3b33; --teal-2: #1f5a4e; --mint: #e9e0cf;
+  --coral: #b08d57; --fg: #1b2724; --muted: #6b6a60; --line: #e4dacb;
   --serif: "DM Serif Display", Georgia, serif; --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
-  --ag-accent: #0c4a4e; --ag-bg: #ffffff; --ag-fg: #0f2a2c; --ag-muted: #557073; --ag-line: #dbe9e8; --ag-soft: #eef7f6; --ag-font: "Manrope", sans-serif;
+  --ag-accent: #0e3b33; --ag-bg: #ffffff; --ag-fg: #1b2724; --ag-muted: #6b6a60; --ag-line: #e4dacb; --ag-soft: #f3ede2; --ag-font: "Manrope", sans-serif;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -24,10 +24,10 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; mar
 p { margin: 0; }
 .wrap { max-width: 1120px; margin-inline: auto; }
 :focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
-.demo-bar { margin-inline: -20px; padding: 9px 20px; background: var(--teal); color: #d7ecea; font-size: 13.5px; text-align: center; }
+.demo-bar { margin-inline: -20px; padding: 9px 20px; background: var(--teal); color: #e9e0cf; font-size: 13.5px; text-align: center; }
 .demo-bar a { color: #fff; font-weight: 600; }
 nav { display: flex; align-items: center; gap: 28px; padding-block: 22px; }
-.logo { font-family: var(--serif); font-size: 26px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo { font-family: var(--serif); font-size: 26px; letter-spacing: .02em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .logo i { width: 26px; height: 26px; border-radius: 50% 50% 50% 8px; background: linear-gradient(135deg, var(--teal-2), var(--teal)); display: inline-block; }
 nav .links { display: flex; gap: 24px; margin-left: auto; font-size: 15px; font-weight: 500; color: var(--muted); }
 nav .links a { text-decoration: none; }
@@ -37,7 +37,7 @@ nav .links a { text-decoration: none; }
 @media (max-width: 820px) { nav .links { display: none; } nav .btn { margin-left: auto; padding: 12px 16px; } }
 
 .hero { position: relative; padding-block: 64px 96px; }
-.hero::before { content: ""; position: absolute; z-index: -1; right: -12%; top: -10%; width: min(640px, 80vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e3f4f2, #9fd2cc 60%, #5fb7b0); opacity: .75; }
+.hero::before { content: ""; position: absolute; z-index: -1; right: -12%; top: -10%; width: min(640px, 80vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #f3ead8, #dcc6a0 60%, #b08d57); opacity: .75; }
 .hero h1 { font-size: clamp(48px, 8vw, 104px); max-width: 11ch; }
 .hero h1 em { color: var(--teal-2); }
 .hero p { margin-top: 24px; font-size: 20px; color: var(--muted); max-width: 30em; }
@@ -57,7 +57,7 @@ section { padding-block: 88px; }
 .t p { color: var(--muted); font-size: 15.5px; }
 .t .from { margin-top: auto; font-weight: 600; font-size: 15px; color: var(--teal); }
 .t.em { background: var(--teal); color: #fff; border-color: var(--teal); }
-.t.em p { color: #bfdedb; } .t.em .from { color: var(--coral); } .t.em .ic { background: var(--teal-2); }
+.t.em p { color: #cfc6b3; } .t.em .from { color: var(--coral); } .t.em .ic { background: var(--teal-2); }
 @media (max-width: 960px) { .treat { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .treat { grid-template-columns: 1fr; } }
 
@@ -81,7 +81,7 @@ section { padding-block: 88px; }
 
 .cta { background: var(--teal); color: #fff; border-radius: 28px; padding: 56px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
 .cta h2 { font-size: clamp(32px, 4.4vw, 52px); max-width: 16ch; }
-.cta .btn { background: var(--coral); color: #1d0e09; }
+.cta .btn { background: var(--coral); color: #14110b; }
 @media (max-width: 600px) { .cta { padding: 32px 24px; } }
 footer { padding-block: 40px 120px; color: var(--muted); font-size: 14px; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
@@ -97,7 +97,7 @@ footer { padding-block: 40px 120px; color: var(--muted); font-size: 14px; }
   </nav>
 
   <header class="hero">
-    <h1>Calm, modern <em>dentistry</em> for the whole family.</h1>
+    <h1>The art of a <em>calm,</em> confident smile.</h1>
     <p>Same-week appointments, clear prices before treatment, and a team that explains everything. Book online in under a minute, any time of day.</p>
     <div class="row">
       <a class="btn btn-main" href="#" data-open-agent>Book with our assistant</a>
@@ -115,9 +115,9 @@ footer { padding-block: 40px 120px; color: var(--muted); font-size: 14px; }
   <div class="wrap">
     <div class="head"><h2>Treatments, priced up front.</h2><p>You get a written quote before any treatment starts. No surprises on the bill.</p></div>
     <div class="treat">
-      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c4a4e" stroke-width="1.8" aria-hidden="true"><path d="M7 3c-3 0-4 3-3 7l2 9c.4 1.5 2.3 1.5 2.7 0L10 14h4l1.3 5c.4 1.5 2.3 1.5 2.7 0l2-9c1-4 0-7-3-7-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Check-up and clean</h3><p>Exam, X-rays when needed, and a gentle hygienist clean.</p><span class="from">From $120</span></article>
-      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c4a4e" stroke-width="1.8" aria-hidden="true"><path d="M4 9c4-3 12-3 16 0M4 15c4 3 12 3 16 0"/><path d="M4 9v6M20 9v6"/></svg></div><h3>Invisalign</h3><p>Clear aligners with a 3D scan and a preview of your new smile.</p><span class="from">From $3,200</span></article>
-      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c4a4e" stroke-width="1.8" aria-hidden="true"><path d="M12 3v10M8 7h8M9 13h6l-1 8h-4z"/></svg></div><h3>Implants</h3><p>Permanent tooth replacement, planned with 3D imaging.</p><span class="from">From $2,400</span></article>
+      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3b33" stroke-width="1.8" aria-hidden="true"><path d="M7 3c-3 0-4 3-3 7l2 9c.4 1.5 2.3 1.5 2.7 0L10 14h4l1.3 5c.4 1.5 2.3 1.5 2.7 0l2-9c1-4 0-7-3-7-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Check-up and clean</h3><p>Exam, X-rays when needed, and a gentle hygienist clean.</p><span class="from">From $120</span></article>
+      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3b33" stroke-width="1.8" aria-hidden="true"><path d="M4 9c4-3 12-3 16 0M4 15c4 3 12 3 16 0"/><path d="M4 9v6M20 9v6"/></svg></div><h3>Invisalign</h3><p>Clear aligners with a 3D scan and a preview of your new smile.</p><span class="from">From $3,200</span></article>
+      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3b33" stroke-width="1.8" aria-hidden="true"><path d="M12 3v10M8 7h8M9 13h6l-1 8h-4z"/></svg></div><h3>Implants</h3><p>Permanent tooth replacement, planned with 3D imaging.</p><span class="from">From $2,400</span></article>
       <article class="t em"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg></div><h3>Emergency care</h3><p>Pain, swelling or a broken tooth. We keep slots open every day.</p><span class="from">Seen today</span></article>
     </div>
   </div>
@@ -146,7 +146,7 @@ footer { padding-block: 40px 120px; color: var(--muted); font-size: 14px; }
 
 <div class="wrap">
   <div class="cta"><h2>Ready when you are, even at midnight.</h2><a class="btn" href="#" data-open-agent>Book with our assistant</a></div>
-  <footer>Brightline Dental Studio is a fictional clinic created as a design demo.</footer>
+  <footer>Brightline Dental Atelier is a fictional clinic created as a design demo.</footer>
 </div>
 
 <script>
@@ -171,5 +171,6 @@ window.AGENT = {
 };
 </script>
 <script src="agent.js"></script>
+<script src="motion.js"></script>
 </body>
 </html>
