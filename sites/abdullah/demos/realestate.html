@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harbor &amp; Stone Realty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Single dark theme on purpose: a quiet luxury brokerage. Large serif, wide tracking, gold used sparingly. */
+:root {
+  --bg: #161513; --stone: #1f1d1a; --stone-2: #2a2824; --line: #3a3732;
+  --fg: #efe6d6; --muted: #a59c8c; --gold: #c9a86a; --sea: #8aa1b1;
+  --serif: "Cormorant Garamond", Georgia, serif; --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --ag-accent: #c9a86a; --ag-accent-fg: #161513; --ag-bg: #1f1d1a; --ag-fg: #efe6d6; --ag-muted: #a59c8c; --ag-line: #3a3732; --ag-soft: #2a2824; --ag-font: "Jost", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 300 17px/1.65 var(--sans); padding-inline: 20px; overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1200px; margin-inline: auto; }
+:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+.demo-bar { margin-inline: -20px; padding: 9px 20px; background: var(--gold); color: #161513; font-size: 13.5px; text-align: center; font-weight: 400; }
+.demo-bar a { font-weight: 500; }
+nav { display: flex; align-items: center; gap: 32px; padding-block: 26px; border-bottom: 1px solid var(--line); }
+.logo { font-family: var(--sans); font-weight: 400; letter-spacing: .32em; font-size: 15px; text-decoration: none; }
+nav .links { display: flex; gap: 30px; margin-left: auto; font-size: 14px; letter-spacing: .08em; color: var(--muted); }
+nav .links a { text-decoration: none; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font: 400 14px/1 var(--sans); letter-spacing: .1em; padding: 16px 24px; text-decoration: none; border: 1px solid var(--gold); cursor: pointer; }
+.btn-gold { background: var(--gold); color: #161513; }
+.btn-line { color: var(--gold); background: transparent; }
+@media (max-width: 860px) { nav .links { display: none; } nav .btn { margin-left: auto; padding: 12px 16px; } }
+
+.hero { padding-block: 72px 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: end; }
+.hero h1 { font-size: clamp(56px, 9vw, 132px); letter-spacing: -0.02em; }
+.hero h1 i { color: var(--gold); }
+.hero p { color: var(--muted); font-size: 19px; max-width: 28em; }
+.hero .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+
+.vista { position: relative; aspect-ratio: 21 / 8; max-width: 100%; overflow: hidden; background: linear-gradient(180deg, #2b3b47 0%, #5d7686 38%, #b9a382 56%, #2a2824 56.4%, #1f1d1a 100%); }
+.vista svg { position: absolute; inset: auto 0 0 0; width: 100%; height: 70%; }
+.vista .cap { position: absolute; left: 24px; bottom: 20px; font-size: 13px; letter-spacing: .14em; color: var(--fg); background: rgba(22,21,19,.6); padding: 8px 12px; }
+@media (max-width: 600px) { .vista { aspect-ratio: 4 / 3; } }
+
+section { padding-block: 96px; }
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 44px; }
+.head h2 { font-size: clamp(40px, 5.6vw, 72px); }
+.head p { color: var(--muted); max-width: 26em; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button { font: 400 13px var(--sans); letter-spacing: .08em; color: var(--muted); background: transparent; border: 1px solid var(--line); padding: 9px 14px; cursor: pointer; }
+.filters button[aria-pressed="true"] { color: #161513; background: var(--fg); border-color: var(--fg); }
+.listings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 22px; }
+.home { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.home .img { aspect-ratio: 4 / 3; max-width: 100%; position: relative; overflow: hidden; }
+.home .img span { position: absolute; top: 12px; left: 12px; font-size: 12px; letter-spacing: .12em; background: var(--bg); padding: 6px 10px; }
+.home h3 { font-size: 30px; }
+.home .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.home .price { font-family: var(--serif); font-size: 26px; color: var(--gold); }
+.home button { align-self: flex-start; font: 400 13px var(--sans); letter-spacing: .1em; color: var(--fg); background: none; border: 0; border-bottom: 1px solid var(--gold); padding: 4px 0; cursor: pointer; }
+@media (max-width: 960px) { .listings { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .listings { grid-template-columns: 1fr; } }
+
+.sell { background: var(--stone); margin-inline: -20px; padding-inline: 20px; }
+.sell .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.sell h2 { font-size: clamp(40px, 5.6vw, 72px); }
+.sell dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.sell dt { font-family: var(--serif); font-size: 56px; color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+.sell dd { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.sell p { color: var(--muted); margin-top: 20px; max-width: 30em; }
+@media (max-width: 860px) { .sell .wrap { grid-template-columns: 1fr; gap: 40px; } }
+footer { padding-block: 48px 120px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="demo-bar">Concept demo designed by Abdullah AI Studio. <a href="../index.html">Back to the main site</a></div>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">HARBOR &amp; STONE</a>
+    <div class="links"><a href="#homes">Homes for sale</a><a href="#sell">Sell with us</a></div>
+    <a class="btn btn-gold" href="#" data-open-agent>Book a viewing</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Homes on <i>the water.</i></h1>
+    <div>
+      <p>Waterfront and coastal homes, sold by a small team that knows every street on the bay. Ask our assistant about any listing, any hour.</p>
+      <div class="row"><a class="btn btn-gold" href="#" data-open-agent>Ask about a home</a><a class="btn btn-line" href="#homes">View listings</a></div>
+    </div>
+  </header>
+
+  <div class="vista" role="img" aria-label="Illustration of a modern house on the shoreline at dusk">
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path d="M0 210 L180 150 L340 190 L520 120 L700 170 L900 110 L1200 180 L1200 300 L0 300Z" fill="#2a2824"/>
+      <rect x="620" y="96" width="300" height="80" fill="#1f1d1a"/>
+      <rect x="680" y="60" width="200" height="40" fill="#161513"/>
+      <rect x="640" y="112" width="120" height="44" fill="#c9a86a" opacity=".85"/>
+      <rect x="780" y="112" width="120" height="44" fill="#c9a86a" opacity=".55"/>
+      <rect x="700" y="70" width="80" height="22" fill="#c9a86a" opacity=".7"/>
+      <rect x="560" y="176" width="420" height="6" fill="#3a3732"/>
+      <rect x="0" y="230" width="1200" height="70" fill="#161513"/>
+      <rect x="640" y="236" width="120" height="3" fill="#c9a86a" opacity=".4"/>
+      <rect x="780" y="244" width="110" height="3" fill="#c9a86a" opacity=".25"/>
+    </svg>
+    <span class="cap">CLIFFSIDE HOUSE, NORTH POINT</span>
+  </div>
+</div>
+
+<section id="homes">
+  <div class="wrap">
+    <div class="head">
+      <h2>Current listings</h2>
+      <div class="filters" role="group" aria-label="Filter listings">
+        <button type="button" aria-pressed="true" data-f="all">All</button>
+        <button type="button" aria-pressed="false" data-f="water">Waterfront</button>
+        <button type="button" aria-pressed="false" data-f="town">In town</button>
+      </div>
+    </div>
+    <div class="listings" id="listings"></div>
+  </div>
+</section>
+
+<section class="sell" id="sell">
+  <div class="wrap">
+    <div>
+      <h2>Thinking of selling?</h2>
+      <p>Ask our assistant for a free valuation. It collects the details we need, and one of our agents calls you back with a price range within a day.</p>
+      <div style="margin-top: 28px;"><a class="btn btn-gold" href="#" data-open-agent>Get a free valuation</a></div>
+    </div>
+    <dl>
+      <div><dt>24</dt><dd>Days on market, our target for priced-right homes</dd></div>
+      <div><dt>3</dt><dd>Agents, each covering one stretch of the coast</dd></div>
+      <div><dt>1 hr</dt><dd>Longest you'll wait for a human reply</dd></div>
+      <div><dt>24/7</dt><dd>Our assistant answers listing questions</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap"><footer>Harbor &amp; Stone Realty is a fictional brokerage created as a design demo. Listings are examples.</footer></div>
+
+<script>
+(function () {
+  var homes = [
+    { n: 'Cliffside House', a: 'North Point', p: '$2,450,000', b: 4, ba: 3.5, s: '3,820', t: 'water', g: ['#40566a', '#9db3c2', '#c9a86a'] },
+    { n: 'Marina Drive', a: 'Harbour District', p: '$845,000', b: 3, ba: 2, s: '1,960', t: 'water', g: ['#2f4a52', '#7fa3a8', '#d8c39a'] },
+    { n: 'The Linden', a: 'Old Town', p: '$1,120,000', b: 4, ba: 3, s: '2,640', t: 'town', g: ['#4b4237', '#9b8a72', '#d9c7a5'] },
+    { n: 'Boathouse Loft', a: 'South Quay', p: '$690,000', b: 2, ba: 2, s: '1,240', t: 'water', g: ['#334553', '#8aa1b1', '#e2cfa7'] },
+    { n: 'Chapel Row', a: 'Old Town', p: '$575,000', b: 2, ba: 1, s: '1,080', t: 'town', g: ['#3d3a35', '#857a6a', '#cdb88f'] },
+    { n: 'Dune House', a: 'East Shore', p: '$1,690,000', b: 5, ba: 4, s: '4,100', t: 'water', g: ['#5a6b74', '#bfc9c9', '#d6b77d'] }
+  ];
+  var el = document.getElementById('listings');
+  function art(g) {
+    return 'background:linear-gradient(180deg,' + g[0] + ' 0%,' + g[1] + ' 52%,' + g[2] + ' 52.6%,#2a2824 53%,#1f1d1a 100%)';
+  }
+  function render(f) {
+    el.innerHTML = '';
+    homes.filter(function (h) { return f === 'all' || h.t === f; }).forEach(function (h) {
+      var a = document.createElement('article');
+      a.className = 'home';
+      a.innerHTML = '<div class="img" style="' + art(h.g) + '"><span>' + (h.t === 'water' ? 'WATERFRONT' : 'IN TOWN') + '</span></div>' +
+        '<h3></h3><div class="meta"><span>' + h.b + ' beds</span><span>' + h.ba + ' baths</span><span>' + h.s + ' sq ft</span><span></span></div>' +
+        '<div class="price">' + h.p + '</div><button type="button">ASK OR BOOK A VIEWING</button>';
+      a.querySelector('h3').textContent = h.n;
+      a.querySelector('.meta span:last-child').textContent = h.a;
+      a.querySelector('button').addEventListener('click', function () {
+        var input = document.getElementById('ag-input');
+        var launch = document.querySelector('.ag-launch');
+        if (document.querySelector('.ag-panel').hidden) launch.click();
+        input.value = 'I want to view ' + h.n;
+        input.form.requestSubmit();
+      });
+      el.appendChild(a);
+    });
+  }
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      render(b.dataset.f);
+    });
+  });
+  render('all');
+})();
+
+window.AGENT = {
+  name: 'Harbor & Stone',
+  launchLabel: 'Ask about a home',
+  greeting: "Good evening. I'm the Harbor & Stone assistant. I can answer questions about any listing, book a private viewing, or arrange a free valuation of your home.",
+  chips: ['Book a viewing', 'Homes under $900k', 'Value my home', 'Is Marina Drive available?'],
+  replies: [
+    { k: ['saturday', 'sunday', '11 a.m', '2 p.m'], a: "Booked. Sarah will meet you at the property and you'll get a text with directions and parking. Would you like the floor plan and disclosure pack by email?", acts: ['Viewing added to Sarah’s calendar', 'Buyer profile saved to CRM', 'Confirmation SMS sent'], chips: ['Yes, email it'] },
+    { k: ['email it'], a: "Done, it's on its way. Sarah will also call if anything changes before the viewing.", acts: ['Floor plan and disclosures sent'] },
+    { k: ['pre-approved', 'mortgage', 'cash'], a: "Thank you. That helps us prioritise you. I can book a private viewing Saturday at 11 a.m. or Sunday at 2 p.m.", acts: ['Lead scored: ready buyer'], chips: ['Saturday 11 a.m.', 'Sunday 2 p.m.'] },
+    { k: ['view', 'viewing', 'see it', 'visit'], a: "I'd be glad to arrange that. Before I book, are you buying with a mortgage, and do you already have pre-approval?", chips: ['Pre-approved', 'Paying cash', 'Not yet'] },
+    { k: ['not yet'], a: "No problem. I can introduce you to a local mortgage adviser, and still book a viewing so you can see the home. Which day suits you?", acts: ['Mortgage adviser intro queued'], chips: ['Saturday 11 a.m.', 'Sunday 2 p.m.'] },
+    { k: ['under', 'budget', '900'], a: 'Under $900k we have Marina Drive ($845,000, 3 bed, waterfront), Boathouse Loft ($690,000, 2 bed, waterfront) and Chapel Row ($575,000, 2 bed, Old Town). Want to see any of them?', chips: ['Book a viewing', 'Is Marina Drive available?'] },
+    { k: ['marina'], a: 'Marina Drive is available. 3 beds, 2 baths, 1,960 sq ft, with a private mooring. It has had 4 viewings this week. Shall I book you one?', chips: ['Book a viewing'] },
+    { k: ['value', 'valuation', 'sell'], a: "Happy to help. What's the address, roughly how many bedrooms, and when are you thinking of selling?", chips: ['3 bed, within 6 months'] },
+    { k: ['bed', 'months'], a: "Thank you. One of our agents will call you tomorrow with a price range based on recent sales nearby. What's the best number to reach you?", acts: ['Valuation request created', 'Agent assigned: East Shore'] }
+  ],
+  fallback: { a: "Let me check that with the listing agent. They'll reply by text within the hour. Anything else I can help with meanwhile?", acts: ['Question forwarded to agent'], chips: ['Book a viewing', 'Homes under $900k'] }
+};
+</script>
+<script src="agent.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Option C: Stone and Copper</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&family=Fraunces:ital,opsz,wght@1,9..144,300&display=swap">
+<style>
+:root{--bg:#e7e2db;--ink:#2a2622;--muted:#756d65;--copper:#b0643c;--sage:#7d8b7a;--line:#cbc3b8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",sans-serif}
+.w{max-width:1320px;margin:0 auto;padding:0 40px}
+nav{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;padding:24px 0;font-size:14px}
+.logo{font:600 18px "Hanken Grotesk";letter-spacing:-.01em}nav .l{display:flex;gap:30px;justify-content:center;color:var(--muted)}
+.btn{justify-self:end;display:inline-flex;align-items:center;gap:12px;padding:14px 22px;font:500 14px "Hanken Grotesk";border-radius:999px;text-decoration:none;background:var(--ink);color:var(--bg)}
+.btn i{width:8px;height:8px;border-radius:50%;background:var(--copper)}
+.hero{position:relative;height:640px;border-radius:10px;overflow:hidden;margin-top:8px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:absolute;left:44px;right:44px;bottom:40px;display:grid;grid-template-columns:1.6fr 1fr;align-items:end;gap:40px}
+h1{font:400 112px/.9 "Hanken Grotesk";letter-spacing:-.055em;margin:0}h1 em{font:300 italic 112px/.9 Fraunces,serif;letter-spacing:-.03em;color:var(--copper)}
+.hero p{margin:0;color:#3d3833;font-size:18px;max-width:380px}
+.meta{position:absolute;top:28px;left:44px;right:44px;display:flex;justify-content:space-between;font:400 12px "IBM Plex Mono";color:#4b453f}
+.idx{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid var(--ink)}
+.idx div{padding:20px 24px 40px 0}.idx code{font:400 12px "IBM Plex Mono";color:var(--copper)}
+.idx h3{font:500 28px/1.1 "Hanken Grotesk";letter-spacing:-.03em;margin:10px 0 8px}.idx p{color:var(--muted);margin:0;font-size:15.5px}
+</style></head><body>
+<div class="w">
+<nav><span class="logo">Abdullah&nbsp;Studio</span><div class="l"><span>Services</span><span>Industries</span><span>Work</span><span>Pricing</span></div><a class="btn"><i></i>Start a project</a></nav>
+<section class="hero"><canvas id="c"></canvas><div class="meta"><span>AI AGENTS / AUTOMATION / WEB</span><span>AVAILABLE FOR Q1 PROJECTS</span></div>
+<div class="in"><h1>Quietly <em>brilliant</em> AI for your business.</h1><p>Agents that answer and book, automations that follow up, and websites built with the care of an architecture studio.</p></div></section>
+<div class="idx"><div><code>01 / AGENTS</code><h3>Answers every lead</h3><p>Chat, WhatsApp and voice, trained on your business.</p></div><div><code>02 / AUTOMATION</code><h3>Follows up for you</h3><p>Reminders, reviews and CRM updates on autopilot.</p></div><div><code>03 / WEB</code><h3>Looks the part</h3><p>Bespoke sites with film and motion built in.</p></div><div><code>04 / CARE</code><h3>Keeps improving</h3><p>Monthly tuning from real conversations.</p></div></div>
+</div>
+<script src="../video/scene.js"></script><script>SCENE(document.getElementById('c'),'stone',{still:6})</script>
+</body></html>

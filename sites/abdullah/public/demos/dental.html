@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brightline Dental Atelier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Single light theme on purpose: a clinic should feel bright and clean. Asymmetric hero with a soft orb. */
+:root {
+  --bg: #f5f0e8; --paper: #ffffff; --teal: #0e3b33; --teal-2: #1f5a4e; --mint: #e9e0cf;
+  --coral: #b08d57; --fg: #1b2724; --muted: #6b6a60; --line: #e4dacb;
+  --serif: "DM Serif Display", Georgia, serif; --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --ag-accent: #0e3b33; --ag-bg: #ffffff; --ag-fg: #1b2724; --ag-muted: #6b6a60; --ag-line: #e4dacb; --ag-soft: #f3ede2; --ag-font: "Manrope", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { overflow-x: clip; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 var(--sans); padding-inline: 20px; overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin-inline: auto; }
+:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+.demo-bar { margin-inline: -20px; padding: 9px 20px; background: var(--teal); color: #e9e0cf; font-size: 13.5px; text-align: center; }
+.demo-bar a { color: #fff; font-weight: 600; }
+nav { display: flex; align-items: center; gap: 28px; padding-block: 22px; }
+.logo { font-family: var(--serif); font-size: 26px; letter-spacing: .02em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo i { width: 26px; height: 26px; border-radius: 50% 50% 50% 8px; background: linear-gradient(135deg, var(--teal-2), var(--teal)); display: inline-block; }
+nav .links { display: flex; gap: 24px; margin-left: auto; font-size: 15px; font-weight: 500; color: var(--muted); }
+nav .links a { text-decoration: none; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 600 15px/1 var(--sans); padding: 15px 22px; border-radius: 999px; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; }
+.btn-main { background: var(--teal); color: #fff; }
+.btn-line { border-color: var(--teal); color: var(--teal); background: transparent; }
+@media (max-width: 820px) { nav .links { display: none; } nav .btn { margin-left: auto; padding: 12px 16px; } }
+
+.hero { position: relative; padding-block: 64px 96px; }
+.hero::before { content: ""; position: absolute; z-index: -1; right: -12%; top: -10%; width: min(640px, 80vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #f3ead8, #dcc6a0 60%, #b08d57); opacity: .75; }
+.hero h1 { font-size: clamp(48px, 8vw, 104px); max-width: 11ch; }
+.hero h1 em { color: var(--teal-2); }
+.hero p { margin-top: 24px; font-size: 20px; color: var(--muted); max-width: 30em; }
+.hero .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.hero ul { list-style: none; padding: 0; margin: 44px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.hero li { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-size: 14.5px; font-weight: 500; }
+.hero li b { color: var(--coral); }
+
+section { padding-block: 88px; }
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 44px; }
+.head h2 { font-size: clamp(36px, 5vw, 60px); max-width: 14ch; }
+.head p { color: var(--muted); max-width: 30em; }
+.treat { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.t { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.t .ic { width: 46px; height: 46px; border-radius: 14px; background: var(--mint); display: grid; place-items: center; }
+.t h3 { font-size: 26px; }
+.t p { color: var(--muted); font-size: 15.5px; }
+.t .from { margin-top: auto; font-weight: 600; font-size: 15px; color: var(--teal); }
+.t.em { background: var(--teal); color: #fff; border-color: var(--teal); }
+.t.em p { color: #cfc6b3; } .t.em .from { color: var(--coral); } .t.em .ic { background: var(--teal-2); }
+@media (max-width: 960px) { .treat { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .treat { grid-template-columns: 1fr; } }
+
+.visit { background: var(--paper); margin-inline: -20px; padding-inline: 20px; }
+.visit .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+.visit h2 { font-size: clamp(36px, 5vw, 60px); }
+.visit ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; counter-reset: v; }
+.visit li { counter-increment: v; display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 22px; border-top: 1px solid var(--line); }
+.visit li::before { content: counter(v); font-family: var(--serif); font-size: 36px; color: var(--coral); line-height: 1; }
+.visit li h3 { font-family: var(--sans); font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.visit li p { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 820px) { .visit .wrap { grid-template-columns: 1fr; } }
+
+.info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.info > div { border-top: 2px solid var(--teal); padding-top: 18px; display: grid; gap: 8px; }
+.info h3 { font-size: 26px; }
+.info p, .info dd { color: var(--muted); font-size: 15.5px; }
+.info dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 15.5px; }
+.info dd { margin: 0; font-variant-numeric: tabular-nums; }
+@media (max-width: 820px) { .info { grid-template-columns: 1fr; } }
+
+.cta { background: var(--teal); color: #fff; border-radius: 28px; padding: 56px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+.cta h2 { font-size: clamp(32px, 4.4vw, 52px); max-width: 16ch; }
+.cta .btn { background: var(--coral); color: #14110b; }
+@media (max-width: 600px) { .cta { padding: 32px 24px; } }
+footer { padding-block: 40px 120px; color: var(--muted); font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="demo-bar">Concept demo designed by Abdullah AI Studio. <a href="../index.html">Back to the main site</a></div>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#"><i aria-hidden="true"></i>Brightline</a>
+    <div class="links"><a href="#treatments">Treatments</a><a href="#visit">Your first visit</a><a href="#hours">Hours</a></div>
+    <a class="btn btn-main" href="#" data-open-agent>Book a visit</a>
+  </nav>
+
+  <header class="hero">
+    <h1>The art of a <em>calm,</em> confident smile.</h1>
+    <p>Same-week appointments, clear prices before treatment, and a team that explains everything. Book online in under a minute, any time of day.</p>
+    <div class="row">
+      <a class="btn btn-main" href="#" data-open-agent>Book with our assistant</a>
+      <a class="btn btn-line" href="#treatments">See treatments</a>
+    </div>
+    <ul>
+      <li><b>Same-day</b> emergency slots</li>
+      <li>Most insurance plans accepted</li>
+      <li>Open Saturdays</li>
+    </ul>
+  </header>
+</div>
+
+<section id="treatments">
+  <div class="wrap">
+    <div class="head"><h2>Treatments, priced up front.</h2><p>You get a written quote before any treatment starts. No surprises on the bill.</p></div>
+    <div class="treat">
+      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3b33" stroke-width="1.8" aria-hidden="true"><path d="M7 3c-3 0-4 3-3 7l2 9c.4 1.5 2.3 1.5 2.7 0L10 14h4l1.3 5c.4 1.5 2.3 1.5 2.7 0l2-9c1-4 0-7-3-7-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Check-up and clean</h3><p>Exam, X-rays when needed, and a gentle hygienist clean.</p><span class="from">From $120</span></article>
+      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3b33" stroke-width="1.8" aria-hidden="true"><path d="M4 9c4-3 12-3 16 0M4 15c4 3 12 3 16 0"/><path d="M4 9v6M20 9v6"/></svg></div><h3>Invisalign</h3><p>Clear aligners with a 3D scan and a preview of your new smile.</p><span class="from">From $3,200</span></article>
+      <article class="t"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e3b33" stroke-width="1.8" aria-hidden="true"><path d="M12 3v10M8 7h8M9 13h6l-1 8h-4z"/></svg></div><h3>Implants</h3><p>Permanent tooth replacement, planned with 3D imaging.</p><span class="from">From $2,400</span></article>
+      <article class="t em"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg></div><h3>Emergency care</h3><p>Pain, swelling or a broken tooth. We keep slots open every day.</p><span class="from">Seen today</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <h2>What happens at your first visit.</h2>
+    <ol>
+      <li><div><h3>Book online</h3><p>Pick a time with our assistant. It sends your new-patient form by text so you can fill it in at home.</p></div></li>
+      <li><div><h3>Meet your dentist</h3><p>A full exam and any X-rays you need, with the screen turned towards you so you see what we see.</p></div></li>
+      <li><div><h3>Get a clear plan</h3><p>You leave with a written plan and prices. Nothing is done without your yes.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="wrap">
+    <div class="info">
+      <div><h3>Opening hours</h3><dl><dt>Mon to Thu</dt><dd>8:00 to 19:00</dd><dt>Friday</dt><dd>8:00 to 16:00</dd><dt>Saturday</dt><dd>9:00 to 14:00</dd><dt>Sunday</dt><dd>Closed</dd></dl></div>
+      <div><h3>Find us</h3><p>210 Harbour Road, Suite 4<br>Free parking behind the building</p></div>
+      <div><h3>Insurance</h3><p>We accept most major dental plans and offer 0% payment plans on treatment over $1,000.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta"><h2>Ready when you are, even at midnight.</h2><a class="btn" href="#" data-open-agent>Book with our assistant</a></div>
+  <footer>Brightline Dental Atelier is a fictional clinic created as a design demo.</footer>
+</div>
+
+<script>
+window.AGENT = {
+  name: 'Brightline',
+  launchLabel: 'Book or ask a question',
+  greeting: "Hi! I'm Brightline's assistant. I can book appointments, answer questions about treatments and prices, or help with an emergency.",
+  chips: ['Book a check-up', 'I have tooth pain', 'Do you take my insurance?', 'Invisalign price'],
+  replies: [
+    { k: ['pain', 'hurt', 'emergency', 'broken', 'swell'], a: "I'm sorry you're in pain. I have an emergency slot today at 4:40 p.m. or tomorrow at 9:15 a.m. Which would you like?", chips: ['Today 4:40 p.m.', 'Tomorrow 9:15 a.m.'] },
+    { k: ['4:40', '9:15', '10:30', '2:00', 'thursday', 'friday'], a: "You're booked! I've texted you a confirmation and a short new-patient form. You'll also get a reminder the day before.", acts: ['Appointment added to calendar', 'Confirmation SMS sent', 'New-patient form sent'], chips: ['What should I bring?', 'Where do I park?'] },
+    { k: ['consultation'], a: 'Great. I have a free Invisalign consultation on Thursday at 10:30 a.m. Shall I book it?', chips: ['Thursday 10:30 a.m.'] },
+    { k: ['payment', 'finance', 'monthly'], a: 'For treatment over $1,000 you can spread the cost over 12 months at 0% interest. We set it up at your visit.', chips: ['Book a check-up'] },
+    { k: ['book', 'check', 'clean', 'appointment'], a: 'Happy to help. A check-up and clean is from $120. I have Thursday at 10:30 a.m. or Friday at 2:00 p.m. Which suits you?', chips: ['Thursday 10:30 a.m.', 'Friday 2:00 p.m.'] },
+    { k: ['insurance', 'plan', 'cover'], a: "We accept most major dental plans. Tell me your provider's name and I'll check it. We also offer 0% payment plans on treatment over $1,000.", chips: ['Book a check-up', 'Payment plans'] },
+    { k: ['invisalign', 'aligner', 'straight'], a: 'Invisalign starts from $3,200, including a 3D scan and a preview of your result. The first consultation is free. Want me to book one?', chips: ['Book free consultation', 'Payment plans'] },
+    { k: ['bring'], a: 'Bring a photo ID, your insurance card if you have one, and a list of any medicines you take.' },
+    { k: ['park', 'where', 'address'], a: "We're at 210 Harbour Road, Suite 4. There's free parking behind the building." },
+    { k: ['hour', 'open', 'saturday'], a: "We're open Monday to Thursday 8 to 7, Friday 8 to 4 and Saturday 9 to 2." }
+  ],
+  fallback: { a: "Good question. I'll pass it to our front desk and they'll reply by text within the hour. Can I help you book a visit meanwhile?", acts: ['Question sent to front desk'], chips: ['Book a check-up', 'I have tooth pain'] }
+};
+</script>
+<script src="agent.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>
